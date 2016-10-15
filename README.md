@@ -1,29 +1,19 @@
-sopel-quote
+sopel-quote (fork)
 ============
 
-A quote module for sopel, an irc bot written in python. Currently supports text file and sqlite for storage.
+A quote module for sopel, an irc bot written in python. This fork only supports MySQL as the datastore for IRC quotes. I used to run an eggdrop which used to use MySQL to store IRC quotes. sopel plus this module made the transition pretty easy! 
+
+This is a somewhat custom module, so I've removed a lot of code I didn't need. I'm not saying it's clean code, but it works. 
 
 ## getting started
 
-If you want to use a text file, put the following at the bottom of your default.cfg file:
+Add this to your default.cfg file:
 
     [quote]
-    datasource = file
-    filename = /path/to/whatever/file/you/want/to/use (optional)
+    datasource = mysql
+    user = YOUR_USERNAME
+    password = YOUR_PASSWORD
+    host = YOUR_HOST
+    database = YOUR_DATABASE
 
-If you want to use sqlite (recommended), put the following at the bottom of your default.cfg file:
-
-    [quote]
-    datasource = sqlite
-    filename = /path/to/whatever/file/you/want/to/use (optional)
-
-NOTE: filename does not end in '.txt' or '.db' or anything else. if you have it as 'file.txt', it will end up being saved (if datasource is 'file') as 'file.txt.txt'
-
-By default, quote data is separated by channel into different files. If you prefer to keep everything in just one file, use the following:
-
-    [quote]
-    datasource = ...
-    filename = ...
-    onefile = True
-
-Also, add 'quote' (without quotes) to the list of modules listed in 'enable' under '[core]'.
+The original sopel-quote project can be found here: https://github.com/gehsekky/sopel-quote
