@@ -5,4 +5,4 @@ CREATE TABLE IF NOT EXISTS `quotes` (
   `quote` text NOT NULL,
   `channel` varchar(50) NOT NULL DEFAULT '',
   `timestamp` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1400 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
